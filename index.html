@@ -6,11 +6,22 @@
     <link rel="stylesheet" href="style.css"> <!-- Opcional -->
 </head>
 <body>
+    <br>
     <h1>Calculadora de Prazo Processual</h1>
+    <br>
+    <p>
+        <b>1º Passo - Insira o Prazo</b>
+    </p>    
     
     <label for="prazoDias">Prazo (em dias):</label>
-    <input type="number" id="prazoDias" min="1" placeholder="Ex.: 15"><br><br>
-    
+    <input type="number" id="prazoDias" min="1" placeholder="Ex.: 15"><br><br>   
+    <label for="diasUteis">Calcular apenas em dias úteis:</label>
+    <input type="checkbox" id="diasUteis" checked><br><br>
+
+    <p>
+        <b>2º Passo - Insira a Data de Referência</b>
+    </p>    
+
     <label for="dataDisponibilizacao">Data de Disponibilização no DJE:</label>
     <input type="date" id="dataDisponibilizacao" onkeydown="desativarOutrasDatas(event, this)"><br><br>
     
@@ -18,14 +29,11 @@
     <input type="date" id="dataPublicacao" onkeydown="desativarOutrasDatas(event, this)"><br><br>
     
     <label for="dataInicioPrazo">Data de Início do Prazo:</label>
-    <input type="date" id="dataInicioPrazo" onkeydown="desativarOutrasDatas(event, this)"><br><br>
-    
-    <label for="diasUteis">Calcular apenas em dias úteis:</label>
-    <input type="checkbox" id="diasUteis" checked><br><br>
-    
+    <input type="date" id="dataInicioPrazo" onkeydown="desativarOutrasDatas(event, this)">(Inclui Data Inicial na Contagem) <br><br><br>
+
     <button onclick="calcularPrazoFatal()">Calcular Prazo Fatal</button><br><br>
     
-    <p>Resultado: <span id="resultado"></span></p><br>
+    <p><b>Prazo Fatal:</b> <span id="resultado"></span></p><br>
     
     <button onclick="configurarFeriados()">Configurar Feriados</button>
     
